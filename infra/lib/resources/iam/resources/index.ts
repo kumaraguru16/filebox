@@ -1,0 +1,1 @@
+export { GlobalLambdaFunctionRole } from "./globalPerFunctionRole";

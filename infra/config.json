@@ -1,0 +1,57 @@
+{
+  "applicationName": "File Upload",
+  "stackPrefix": "fu-app",
+  "environments": [
+    {
+      "envName": "dev",
+      "account": "877969058937",
+      "needApproval": false,
+      "tags": {
+        "createdby": "kmanivannan@presidio.com",
+        "modifiedby": "kmanivannan@presidio.com",
+        "email": "kmanivannan@presidio.com",
+        "owner": "Kumaraguru Manivannan"
+      },
+      "regions": {
+        "us-east-1": {
+          "network": {
+            "vpcId": "vpc-04a546ef213cd272a",
+            "subnets": [
+              {
+                "type": "public",
+                "name": "public",
+                "subnetIds": [
+                  "subnet-06cf8a304cfd3367e",
+                  "subnet-01dbf229ef2b1e74d",
+                  "subnet-0d3799b4489d1a052"
+                ]
+              },
+              {
+                "type": "private",
+                "name": "private",
+                "subnetIds": [
+                  "subnet-082816ed037e1ad9e",
+                  "subnet-0f8ab315a457b2de0",
+                  "subnet-00dfc08a5810a4a40"
+                ]
+              }
+            ]
+          },
+          "application": {
+            "AMIIds": {
+              "AmazonLinux": "ami-0c101f26f147fa7fd"
+            },
+            "keyPairNames": {
+              "CommonKeyPair": "FU-app"
+            }
+          },
+          "rds": {
+            "DatabaseName": "FU",
+            "MinCapacity": 2,
+            "MaxCapacity": 4
+          }
+        }
+      }
+    }
+  ]
+}
