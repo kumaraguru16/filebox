@@ -79,7 +79,7 @@ const serverlessConfiguration: AWSCustom = {
       '!tests/**',
       '!serverless-configs/**',
       '!envs/**',
-      'node_modules/.prisma/client/libquery_engine-rhel-openssl-3.0.x.so.node',
+      'node_modules/.pnpm/@prisma+client@5.14.0_prisma@5.14.0/node_modules/.prisma/client/libquery_engine-rhel-openssl-3.0.x.so.node',
       '!test_payloads/**',
       'prisma/schema.prisma',
     ],

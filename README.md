@@ -84,6 +84,7 @@ npx prisma generate
 - **Development mode**
 
 ```bash
+USE AWS Credential in current terminal
 sls offline --noTimeout
 ```
 
