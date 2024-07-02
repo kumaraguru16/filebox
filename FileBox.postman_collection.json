@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "385c69c5-ce99-4727-b953-683fefc41a69",
+		"name": "FileBox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13662499"
+	},
+	"item": [
+		{
+			"name": "FileUpload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"schema\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/upload-files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"upload-files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFileDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/dev/file-detail?page=2&limit=2&showHidden=false",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"dev",
+						"file-detail"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "showHidden",
+							"value": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ToggleFileDetailVisibility",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [\"3f18b15a-811e-43e3-b1e1-381653e1c866\",\"5a6fdab0-fc22-4b22-8fdf-cae71667eafa\"],\n    \"hidden\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dev/file-detail/visibility",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dev",
+						"file-detail",
+						"visibility"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFileDetail",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [\"5de22b7d-958c-4b31-9bc0-828c3ef59bcb\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/dev/file-detail",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"dev",
+						"file-detail"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000"
+		}
+	]
+}

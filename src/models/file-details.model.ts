@@ -35,6 +35,5 @@ export interface ResponseFileDetailModel {
 export interface ResponseGetFileDetailModel {
   totalFileDetails: number;
   page: number;
-  totalPages: number;
   fileDetails: ResponseFileDetailModel[];
 }

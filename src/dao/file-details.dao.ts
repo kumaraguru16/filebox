@@ -5,16 +5,16 @@ import {
   RequestToggleFileDetailVisibilityModel,
   ResponseFileDetailModel,
   ResponseGetFileDetailModel,
-} from "../models/file-details.model";
-import { logger } from "../utils/logger.utils";
-import { prisma } from "../utils/prisma.util";
+} from '../models/file-details.model';
+import { logger } from '../utils/logger.utils';
+import { prisma } from '../utils/prisma.util';
 
 export class FileDetailsDao {
   static async createFileDetail(
     fileDetailData: RequestFileDetailModel[]
   ): Promise<any> {
     logger.trace(
-      "Entering <FileDetailsDao.createFileDetail>, Request payload: %o.",
+      'Entering <FileDetailsDao.createFileDetail>, Request payload: %o.',
       fileDetailData
     );
     const fileDetailCreated: any = await prisma.fileDetails.createMany({
@@ -22,7 +22,7 @@ export class FileDetailsDao {
     });
 
     logger.trace(
-      "Exiting <FileDetailsDao.createFileDetail>: %o.",
+      'Exiting <FileDetailsDao.createFileDetail>: %o.',
       fileDetailCreated
     );
     return fileDetailCreated;
@@ -34,7 +34,7 @@ export class FileDetailsDao {
     showHidden,
   }: RequestGetFileDetailModel): Promise<ResponseGetFileDetailModel> {
     logger.trace(
-      "Entering <FileDetailsDao.getFileDetail>, Request payload: ",
+      'Entering <FileDetailsDao.getFileDetail>, Request payload: ',
       page,
       limit,
       showHidden
@@ -56,11 +56,10 @@ export class FileDetailsDao {
         ...conditions,
       });
 
-    logger.trace("Exiting <FileDetailsDao.getFileDetail>: %o.", fileDetails);
+    logger.trace('Exiting <FileDetailsDao.getFileDetail>: %o.', fileDetails);
     return {
       totalFileDetails,
       page,
-      totalPages: Math.ceil(fileDetails.length / limit),
       fileDetails,
     };
   }
@@ -70,7 +69,7 @@ export class FileDetailsDao {
     hidden,
   }: RequestToggleFileDetailVisibilityModel): Promise<any> {
     logger.trace(
-      "Entering <FileDetailsDao.toggleFileDetailVisibility>, Request payload: ",
+      'Entering <FileDetailsDao.toggleFileDetailVisibility>, Request payload: ',
       ids
     );
 
@@ -87,7 +86,7 @@ export class FileDetailsDao {
       });
 
     logger.trace(
-      "Exiting <FileDetailsDao.toggleFileDetailVisibility>: %o.",
+      'Exiting <FileDetailsDao.toggleFileDetailVisibility>: %o.',
       toggleVisibilityFileDetailsResponse
     );
     return toggleVisibilityFileDetailsResponse;
@@ -97,7 +96,7 @@ export class FileDetailsDao {
     ids,
   }: RequestDeleteFileDetailModel): Promise<any> {
     logger.trace(
-      "Entering <FileDetailsDao.deleteFileDetail>, Request payload: ",
+      'Entering <FileDetailsDao.deleteFileDetail>, Request payload: ',
       ids
     );
 
@@ -113,7 +112,7 @@ export class FileDetailsDao {
     });
 
     logger.trace(
-      "Exiting <FileDetailsDao.deleteFileDetail>: %o.",
+      'Exiting <FileDetailsDao.deleteFileDetail>: %o.',
       deleteFileDetailsResponse
     );
     return deleteFileDetailsResponse;
